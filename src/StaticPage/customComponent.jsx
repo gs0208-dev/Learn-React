@@ -49,11 +49,34 @@ Part 2:
  *   "Pricing", "About", and "Contact"
 */
 
+/**
+ * Challenge:
+ * 
+ * Using flexbox, line up the `li`s horizontally and put them inline
+ * with the React logo.
+ * 
+ * NOTE: for practice's sake, don't select any
+ * elements, but use classes for all styling.
+ */
+
+/**
+ * Challenge:
+ * 
+ * Move the `width` style off the JSX and into CSS with a dedicated
+ * className on the img element, and change the width to 55px instead
+ */
+
 function Header(){
   return(
-    <header>
-      <img src={reactLogo} alt="react-logo" width="50px" />
-      
+    <header className='header'>
+      <img className='react-logo' src={reactLogo} alt="react-logo"/>
+      <nav>
+        <ul className='nav-list'>
+          <li className='nav-list-items'>Pricing</li>
+          <li className='nav-list-items'>About</li>
+          <li className='nav-list-items'>Contact</li>
+        </ul>
+      </nav>
     </header>
   )
 }
