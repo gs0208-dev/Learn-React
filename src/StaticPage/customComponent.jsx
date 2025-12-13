@@ -1,4 +1,6 @@
-import reactLogo from './../assets/react-logo.svg';
+import { Header  } from '../components/Header';
+import { MainContent } from '../components/MainContent';
+import { Footer } from '../components/Footer';
 /**
  * Challenge (part 1):
  * Create a custom "Page" component
@@ -66,43 +68,11 @@ Part 2:
  * className on the img element, and change the width to 55px instead
  */
 
-function Header(){
-  return(
-    <header className='header'>
-      <img className='react-logo' src={reactLogo} alt="react-logo"/>
-      <nav>
-        <ul className='nav-list'>
-          <li className='nav-list-items'>Pricing</li>
-          <li className='nav-list-items'>About</li>
-          <li className='nav-list-items'>Contact</li>
-        </ul>
-      </nav>
-    </header>
-  )
-}
+/**
+ * Challenge: move the MainContent and Footer components to their own
+ * separate files.
+ */
 
-function MainContent(){
-  return (
-    <main>
-      <h1>
-        React Learning.
-      </h1>
-      <ol className='ordered-list'>
-        <li>I'm learning because it is modern way to develop websites.</li>
-        <li>To level up my skill.</li>
-        <li>To get a better job.</li>
-      </ol>
-    </main>
-  )
-}
-
-function Footer(){
-  return (
-    <footer>
-      © 20xx Software development. All rights reserved.
-    </footer>
-  )
-}
 
 export function Page() {
   return (
