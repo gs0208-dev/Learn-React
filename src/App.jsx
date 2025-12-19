@@ -1,16 +1,16 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { Page } from './StaticPage/customComponent'
-import { Main } from './components/Main'
-import Navbar from './components/Navbar'
+import { Page } from './components/StaticPage/customComponent'
+import { Main } from './components/StaticPage/Main'
+import Navbar from './components/StaticPage/Navbar'
+import { Header } from './components/Data-Driven-React/Header'
+import { Entry } from './components/Data-Driven-React/Entry'
 
 function App() {
 
   return (
     <>
-      <Navbar />
-      <Main />
+     <Header />
+     <Entry />
     </>
   )
 }

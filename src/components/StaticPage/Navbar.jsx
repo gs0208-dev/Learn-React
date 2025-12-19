@@ -1,4 +1,4 @@
-import reactLogo from './../assets/react-logo-filled.svg';
+import reactLogo from './../../assets/StaticPage-images/react-logo-filled.svg';
 /**
  * Challenge: complete the Navbar to match the Figma design
  * 
