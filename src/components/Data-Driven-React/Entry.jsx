@@ -1,4 +1,3 @@
-import japanPlace from "../../assets/DDR-images/japan-place.png";
 import maplogo from "../../assets/DDR-images/map-logo.png";
 
 /**
@@ -18,20 +17,18 @@ import maplogo from "../../assets/DDR-images/map-logo.png";
 */
 
 
-export function Entry(){
+export function Entry({img, title, country, googleMapsLink, dates, text}){
   return (
-    <main className="ddr-entry">
       <div className="japan">
-        <img src={japanPlace} alt="japan-place" className="ddr-entry-image" />
+        <img src={img.src} alt={img.alt} className="ddr-entry-image" />
         <div className="ddr-entry-content">
           <img src={maplogo} alt="map-logo" className="ddr-entry-map-logo" />
-          <span className="ddr-entry-japan-text">Japan</span>
-          <a className="ddr-entry-map-link" href="https://www.google.com/maps/place/Mount+Fuji/@35.3606421,138.7170637,15z/data=!3m1!4b1!4m6!3m5!1s0x6019629a42fdc899:0xa6a1fcc916f3a4df!8m2!3d35.3606255!4d138.7273634!16zL20vMGNrczA?entry=ttu">View on Google Maps</a>
-          <h2 className="ddr-entry-mtf">Mount Fuji</h2>
-          <span>12 Jan, 2023 - 24 Jan, 2023</span>
-          <p>Mount Fuji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is the single most popular tourist site in Japan, for both Japanese and foreign tourists.</p>
+          <span className="ddr-entry-japan-text">{country}</span>
+          <a className="ddr-entry-map-link" href={googleMapsLink}>View on Google Maps</a>
+          <h2 className="ddr-entry-mtf">{title}</h2>
+          <span>{dates}</span>
+          <p>{text}</p>
         </div>
       </div>
-    </main>
   );
 }
