@@ -16,18 +16,22 @@ import maplogo from "../../assets/DDR-images/map-logo.png";
  *   this data into the component.
 */
 
+/**
+ * Challenge: Fix our component! 😱
+*/
 
-export function Entry({img, title, country, googleMapsLink, dates, text}){
+export function Entry(props){
+  console.log(props);
   return (
       <div className="japan">
-        <img src={img.src} alt={img.alt} className="ddr-entry-image" />
+        <img src={props.entry.img.src} alt={props.entry.img.alt} className="ddr-entry-image" />
         <div className="ddr-entry-content">
           <img src={maplogo} alt="map-logo" className="ddr-entry-map-logo" />
-          <span className="ddr-entry-japan-text">{country}</span>
-          <a className="ddr-entry-map-link" href={googleMapsLink}>View on Google Maps</a>
-          <h2 className="ddr-entry-mtf">{title}</h2>
-          <span>{dates}</span>
-          <p>{text}</p>
+          <span className="ddr-entry-japan-text">{props.entry.country}</span>
+          <a className="ddr-entry-map-link" href={props.entry.googleMapsLink}>View on Google Maps</a>
+          <h2 className="ddr-entry-mtf">{props.entry.title}</h2>
+          <span>{props.entry.dates}</span>
+          <p>{props.entry.text}</p>
         </div>
       </div>
   );

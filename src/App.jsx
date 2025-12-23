@@ -110,12 +110,8 @@ function App() {
   const entryElements = data.map((ele) => {
     return ( 
       <Entry 
-        img={ele.img} 
-        title={ele.title} 
-        country={ele.country} 
-        googleMapsLink={ele.googleMapsLink} 
-        dates={ele.dates} 
-        text={ele.text} 
+        key={ele.id}
+        entry={ele} 
       /> 
     )
   })
@@ -123,7 +119,9 @@ function App() {
     return (
     <>
       <Header />
-      {entryElements}
+      <div className="ddr-entry">
+        {entryElements}
+      </div>
     </>
     
   )

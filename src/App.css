@@ -119,6 +119,7 @@
   height: 704px;
   border-width: 2px;
   border-color: black;
+  border-top-color: white;
   border-style: solid;
 }
 
@@ -135,6 +136,7 @@
 .ddr-entry-image{
   width: 125px;
   height: 168px;
+  border-radius: 10px;
 }
 
 .ddr-entry-map-logo{
