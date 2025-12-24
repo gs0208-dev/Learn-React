@@ -1,18 +1,18 @@
-import './App.css'
-import { Page } from './components/StaticPage/customComponent'
-import { Main } from './components/StaticPage/Main'
-import Navbar from './components/StaticPage/Navbar'
-import { Header } from './components/Data-Driven-React/Header'
-import { Entry } from './components/Data-Driven-React/Entry'
+import { Page } from './components/1-StaticPage/customComponent'
+import { Main } from './components/1-StaticPage/Main'
+import Navbar from './components/1-StaticPage/Navbar'
+// import { Header }  from './components/2-Data-Driven-React/Header'
+import { Entry } from './components/2-Data-Driven-React/Entry'
 import japanPlace from "./assets/DDR-images/japan-place.png";
-import data from './components/Data-Driven-React/data'
-import { Contacts } from './components/Data-Driven-React/Contacts'
-import Joke from './components/Data-Driven-React/Joke'
+import data from './components/2-Data-Driven-React/data'
+import { Contacts } from './components/2-Data-Driven-React/Contacts'
+import Joke from './components/2-Data-Driven-React/Joke'
 import catimg from './assets/DDR-images/cat-image.jpg'
 import catimg2 from './assets/DDR-images/cat-img2.jpg'
 import catimg3 from './assets/DDR-images/cat-img3.jpg'
 import catimg4 from './assets/DDR-images/cat-img4.jpg'
-import jokesData from './components/Data-Driven-React/jokesData'
+import jokesData from './components/2-Data-Driven-React/jokesData'
+import { Header } from "./components/3-React-State/Header"
 
 /**
  * Challenge: pass props to the Entry component to display
@@ -106,7 +106,16 @@ function App() {
     </main>
   )
   */
-
+  /*
+  return (
+    <>
+      <div className='text-shadow-emerald-500 bg-fuchsia-500 w-35'>
+        Hello from tailwind 
+      </div>
+    </>
+  )
+  */
+  /*
   const entryElements = data.map((ele) => {
     return ( 
       <Entry 
@@ -125,8 +134,13 @@ function App() {
     </>
     
   )
-
-
+  */
+  return(
+    <div className='rs-bg'>
+      <Header />
+    </div>    
+    
+  )
 
 }
 

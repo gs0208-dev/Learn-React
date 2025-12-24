@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 .ordered-list{
   padding-left: 20px;
 }
@@ -185,6 +187,40 @@
 }
 
 
+.rs-bg{
+  background-color: #FAFAF8;
+  width: 720px;
+  height: 291px;
+}
+
+.rs-header{
+  width: 720px;
+  height: 111px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+}
+
+.rs-logo{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.rs-img{
+  width: 43px;
+  height: 52px;
+  margin-right: 10px;
+}
+
+.rs-text{
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 32px;
+}
 
 
 /* .navbar-header{
