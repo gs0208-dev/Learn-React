@@ -10,12 +10,10 @@ import chefimg from "../../assets/React-State/chef-claude.png"
 export function Header(){
   return(
     <header className="rs-header">
-      <div className="rs-logo">
         <img className="rs-img" src={chefimg} alt="chefClaude" />
         <span className="rs-text">
           Chef Claude
         </span>
-      </div>
     </header>
   );
 }

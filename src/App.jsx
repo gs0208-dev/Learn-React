@@ -1,5 +1,5 @@
 import { Page } from './components/1-StaticPage/customComponent'
-import { Main } from './components/1-StaticPage/Main'
+// import { Main } from './components/1-StaticPage/Main'
 import Navbar from './components/1-StaticPage/Navbar'
 // import { Header }  from './components/2-Data-Driven-React/Header'
 import { Entry } from './components/2-Data-Driven-React/Entry'
@@ -13,6 +13,7 @@ import catimg3 from './assets/DDR-images/cat-img3.jpg'
 import catimg4 from './assets/DDR-images/cat-img4.jpg'
 import jokesData from './components/2-Data-Driven-React/jokesData'
 import { Header } from "./components/3-React-State/Header"
+import Main from './components/3-React-State/Main';
 
 /**
  * Challenge: pass props to the Entry component to display
@@ -138,7 +139,10 @@ function App() {
   return(
     <div className='rs-bg'>
       <Header />
-    </div>    
+      <Main />  
+    
+    </div>
+      
     
   )
 
