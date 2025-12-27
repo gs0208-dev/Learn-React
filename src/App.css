@@ -1,4 +1,4 @@
-@import "tailwindcss";
+/* @import "tailwindcss"; */
 
 .ordered-list{
   padding-left: 20px;
@@ -274,7 +274,7 @@ body {
 .rs-bg{
   background-color: #FAFAF8;
   width: 720px;
-  height: 291px;
+  height: 853px;
 }
 
 .rs-header{
@@ -307,7 +307,7 @@ body {
 }
 
 .rs-main{
-  padding: 70px 0px 60px 0px;
+  padding-top: 70px;
 }
 
 .rs-form{
@@ -332,4 +332,8 @@ body {
   border-style: solid;
 }
 
-
+.rs-main > ul{
+  left: 200px;
+  top: 10px;
+  position: relative;
+}

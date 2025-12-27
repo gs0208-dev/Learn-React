@@ -14,6 +14,7 @@ import catimg4 from './assets/DDR-images/cat-img4.jpg'
 import jokesData from './components/2-Data-Driven-React/jokesData'
 import { Header } from "./components/3-React-State/Header"
 import Main from './components/3-React-State/Main';
+import { useState } from 'react';
 
 /**
  * Challenge: pass props to the Entry component to display
@@ -46,7 +47,46 @@ import Main from './components/3-React-State/Main';
  *   hard-coded <Entry /> instance.
 */
 
+/**
+ * Challenge: 
+ * 1. Create a function called `handleClick` that runs
+ *    setIsImportant("Definitely")
+ * 2. Add a click event listener to the button
+ *    that runs `handleClick` when the button is clicked.
+*/
+
+/**
+ * Challenge: 
+ * Create state to track our count value (initial value is 0)
+ * Don't forget to replace the hard-coded "0" with your new state
+*/
+
+/**
+ * Challenge: 
+ * - Initialize state for `isGoingOut` as a boolean
+ * - Make it so clicking the button flips that
+ *   boolean value (true -> false, false -> true)
+ * - Display "Yes" if `isGoingOut` is `true`, "No" otherwise
+*/
+
+/**
+ * Challenge: Convert the code below to use an array
+ * held in state instead of a local variable. Initialize 
+ * the state array as an empty array
+ * 
+ * Don't worry about fixing `addFavoriteThing` quite yet.
+*/
+
+/**
+ * Challenge: you do it!
+ * Every time "Add item" is clicked, it should add another string
+ * "Test" to the list on the page
+*/
+
+
+
 function App() {
+
   /*
   return (
     <>
@@ -136,6 +176,89 @@ function App() {
     
   )
   */
+  /*
+  let [isImportant , setIsImportant] = useState("Yes");
+
+  function handleClick(){
+    setIsImportant("Defenitely")
+  }
+
+  return (
+    <main>
+      <h1 className="title">Is state important to know?</h1>
+      <button onClick={handleClick} className="value">{isImportant}</button>
+    </main>
+  )
+  */
+  /*
+  const [isState, setIsState] = useState(0)
+
+    
+    //  * Note: if you ever need the old value of state
+    //  * to help you determine the new value of state,
+    //  * you should pass a callback function to your
+    //  * state setter function instead of using
+    //  * state directly. This callback function will
+    //  * receive the old value of state as its parameter,
+    //  * which you can then use to determine your new
+    //  * value of state.
+     
+
+  function handleAdd(){
+    setIsState( prevCount => prevCount + 1);
+  }
+
+  function handleSub(){
+    setIsState(prevCount => prevCount - 1);
+  }
+
+  return (
+    <main className="container">
+      <h1>How many times will Bob say "state" in this section?</h1>
+      <div className="counter">
+        <button onClick={handleSub} className="minus" aria-label="Decrease count">–</button>
+        <h2 className="count">{isState}</h2>
+        <button onClick={handleAdd} className="plus" aria-label="Increase count">+</button>
+      </div>
+    </main>
+  )
+  */
+  /*
+  const [isGoingOut, setIsGoingOut] = useState(true);
+
+  function flipBoolean(){
+    setIsGoingOut(prev => !prev)
+  }
+
+  return (
+    <main>
+      <h1 className="title">Do I feel like going  out tonight?</h1>
+      <button onClick={flipBoolean}  className="value">{isGoingOut? "Yes" : "No"}</button>
+    </main>
+  )
+  */
+  /*
+  const [myFavoriteThings, setMyFavoriteThings] = useState([])
+  const allFavoriteThings = ["💦🌹", "😺", "💡🫖", "🔥🧤", "🟤🎁", 
+  "🐴", "🍎🥧", "🚪🔔", "🛷🔔", "🥩🍝"]
+  const thingsElements = myFavoriteThings.map(thing => <p key={thing}>{thing}</p>)
+
+  function addFavoriteThing() {
+    setMyFavoriteThings( prev => [...prev,allFavoriteThings[prev.length]]);
+
+  }
+  
+  return (
+    <main>
+      <button onClick={addFavoriteThing}>Add item</button>
+      <section aria-live="polite">
+        {thingsElements}
+      </section>
+    </main>
+  )
+  */
+
+
   return(
     <div className='rs-bg'>
       <Header />
@@ -145,7 +268,6 @@ function App() {
       
     
   )
-
 }
 
 export default App
