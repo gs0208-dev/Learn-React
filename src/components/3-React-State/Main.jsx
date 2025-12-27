@@ -8,6 +8,8 @@
  * we're building up to learning the right way 🙂
 */
 
+import { useState } from "react"
+
 /**
  * Challenge:
  * Add an `onSubmit` event listener on the form. Have the function
@@ -23,9 +25,15 @@
  * Hint: this is a one-liner solution, so don't overthink it 😅
 */
 
+/**
+ * Challenge: Update our app so that when the user enters a
+ * new ingredient and submits the form, it adds that new
+ * ingredient to our list!
+*/
+
 export default function Main(){
 
-  let ingredients = ['Chicken','Oregano','Tomatoes']
+  const [ ingredients, setIngredient] = useState([])
 
   const ingredientsListItems = ingredients.map((list) => {
     return (
@@ -39,8 +47,7 @@ export default function Main(){
     event.preventDefault()
     const formData = new FormData(event.currentTarget)
     const newIngredient = formData.get("ingredient");
-    ingredients.push(newIngredient)
-    console.log(ingredients);
+    setIngredient(prev => [...prev, newIngredient])
   }
 
   return (

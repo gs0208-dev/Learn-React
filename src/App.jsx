@@ -15,6 +15,8 @@ import jokesData from './components/2-Data-Driven-React/jokesData'
 import { Header } from "./components/3-React-State/Header"
 import Main from './components/3-React-State/Main';
 import { useState } from 'react';
+import emptyStar from "./assets/React-State/empty-star.png"
+import filledStar from "./assets/React-State/filled-star.png"
 
 /**
  * Challenge: pass props to the Entry component to display
@@ -83,6 +85,31 @@ import { useState } from 'react';
  * "Test" to the list on the page
 */
 
+/**
+ * Challenge: Fill in the values in the markup
+ * using the properties of our state object above
+ * (Ignore `isFavorite` for now)
+*/
+
+/**
+ * Challenge: Use a ternary to determine which star image variable
+ * should be used based on the `contact.isFavorite` property. Test 
+ * your results by manually changing the isFavorite value in state.
+ * 
+ * `true` => starFilled
+ * `false` => starEmpty
+*/
+
+/**
+ * Challenge:
+ * Update the following:
+ * - aria-pressed should reflect the same value as contact.isFavorite.
+ * - aria-label should switch to say "Remove from favorites" if
+ *   contact.isFavorite is `true`.
+ * - img alt should say "filled star icon" when it is filled.
+*/
+
+    
 
 
 function App() {
@@ -259,15 +286,70 @@ function App() {
   */
 
 
-  return(
-    <div className='rs-bg'>
-      <Header />
-      <Main />  
+  const [contact, setContact] = useState({
+    firstName: "John",
+    lastName: "Doe",
+    phone: "+1 (212) 555-1212",
+    email: "itsmyrealname@example.com",
+    isFavorite: false
+  })
+
+  let starIcon = contact.isFavorite ? filledStar : emptyStar;
+  let ariaLabel = contact.isFavorite ? "Remove from favorites" : 'Add to favorites';
+  let imageAlt = contact.isFavorite ? "Filled star icon" : "empty star icon";
+
+  function toggleFavorite() {
+    setContact(prev => {
+      return {
+        ...prev,
+        isFavorite: !prev.isFavorite
+      }
+    })
+  }
+
+  return (
+    <main>
+      <article className="card">
+        <img
+          
+          className="avatar"
+          alt="User profile picture of John Doe"
+        />
+        <div className="info">
+          <button 
+            onClick={toggleFavorite}
+            aria-pressed={contact.isFavorite}
+            aria-label= { ariaLabel}
+            className="favorite-button">
+            <img width={30}
+              src={starIcon}
+              alt={imageAlt}
+              className="favorite"
+            />
+          </button>
+          <h2 className="name">
+            {contact.firstName} {contact.lastName}
+          </h2>
+        <p className="contact">{contact.phone}</p>
+          <p className="contact">{contact.email}</p>
+        </div>
+
+      </article>
+    </main>
+    )
+
+
+  // return(
+  //   <div className='rs-bg'>
+  //     <Header />
+  //     <Main />  
     
-    </div>
+  //   </div>
       
     
-  )
+  // )
+
+  
 }
 
 export default App
