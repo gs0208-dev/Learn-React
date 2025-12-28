@@ -285,7 +285,7 @@ function App() {
   )
   */
 
-
+  /*
   const [contact, setContact] = useState({
     firstName: "John",
     lastName: "Doe",
@@ -336,7 +336,94 @@ function App() {
 
       </article>
     </main>
-    )
+  )
+  */
+
+  
+  function signUp(formData){
+    // const email = formData.get('email');
+    // const pwd = formData.get('password');
+    // const radioBtn = formData.get('employmentStatus')
+    // const checkbox = formData.getAll('dietryRestrictions')
+    // const favColor = formData.get('favColor');
+    // console.log(email);
+    // console.log(pwd);
+    // console.log(radioBtn);
+    // console.log(checkbox);
+    // console.log(favColor);
+
+    const data = Object.fromEntries(formData)
+    const dietryRestrictions = formData.getAll('dietryRestrictions')
+    const finalData = {
+      ...data,
+      dietryRestrictions
+    }
+    console.log(data);
+    
+    console.log('finalData: ' ,finalData);
+    
+    
+  }
+
+  return (
+    <section>
+      <h1>Sign Up</h1>
+      <form action={signUp}> 
+        <label htmlFor='email'>Email: </label>
+        <input type="email" id='email' name='email' placeholder='joe@email.com' />
+        <br />
+        <label htmlFor="password">Password: </label>
+        <input type="password" id='password' name='password' />
+        <br />
+        <label htmlFor="description">Description: </label>
+        <textarea name="description" id="description"></textarea>
+        <br />
+        <fieldset>
+          <legend>Employment Status: </legend>
+          <label>
+            <input type="radio" name="employmentStatus" value="Unemployed"/> Unemployed
+          </label>
+
+          <label>
+            <input type="radio" name="employmentStatus"  value="Part-Time"/> Part-Time
+          </label>
+
+          <label>
+            <input type="radio" name="employmentStatus"  value="Full-Time"/> Full-Time
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Dietery Restrictions: </legend>
+          <label>
+            <input type="checkbox" name="dietryRestrictions" value="Kosher"/> Kosher
+          </label>
+
+          <label>
+            <input type="checkbox" name="dietryRestrictions"  value="Vegan"/> Vegan
+          </label>
+
+          <label>
+            <input type="checkbox" name="dietryRestrictions" value="Gluten-Free"/> Gluten-Free
+          </label>
+        </fieldset>
+        <br />
+
+        <label htmlFor="favColor">Choose Your Favourite Color</label>
+        <select name="favColor" id="favColor" required>
+          <option value="">-- Select a color --</option>
+          <option value="Red">Red</option>
+          <option value="Orange">Orange</option>
+          <option value="Green">Green</option>
+          <option value="Blue">Blue</option>
+        </select>
+
+        <button>Submit</button>
+      </form>
+    </section>
+
+  )
+  
 
 
   // return(

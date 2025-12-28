@@ -31,6 +31,11 @@ import { useState } from "react"
  * ingredient to our list!
 */
 
+/**
+ * Challenge: use form action instead of onSubmit to
+ * handle the data from the form
+*/
+
 export default function Main(){
 
   const [ ingredients, setIngredient] = useState([])
@@ -43,16 +48,14 @@ export default function Main(){
     )
   })
 
-  function handleSubmit(event){
-    event.preventDefault()
-    const formData = new FormData(event.currentTarget)
+  function formAction(formData){
     const newIngredient = formData.get("ingredient");
     setIngredient(prev => [...prev, newIngredient])
   }
 
   return (
     <main className="rs-main">
-      <form className="rs-form" action="" onSubmit={handleSubmit}>
+      <form className="rs-form" action={formAction}>
         <input name="ingredient" className="border-2" type="text" placeholder="e.g. oregano" aria-label="Add ingredient"/>
         <button>+ Add ingredient</button>
       </form>
