@@ -109,6 +109,22 @@ import filledStar from "./assets/React-State/filled-star.png"
  * - img alt should say "filled star icon" when it is filled.
 */
 
+/**
+ * Challenge:
+ * If there are 0 unread messages, display a paragraph that says "You
+ * have no unread messages". (So, the logic will be the opposite of
+ * what we have for the h1)
+*/
+
+/**
+ * Challenge:
+ * - If there are no unread messages, display "You're all caught up!"
+ * - If there's exactly 1 unread message, it should read "You have 
+ *   1 unread message" (singular)
+ * - If there are > 1 unread messages, display "You have <n> unread
+ *   messages" (plural)
+*/
+
     
 
 
@@ -124,7 +140,9 @@ function App() {
       <Joke setup="What's the best thing about Switzerland?" punchline="I don't know, but the flag is a big plus!" />
     </>
   )
+  */
 
+  /*
   return (
     <div className='contacts'>
     <Contacts 
@@ -339,7 +357,7 @@ function App() {
   )
   */
 
-  
+  /*
   function signUp(formData){
     // const email = formData.get('email');
     // const pwd = formData.get('password');
@@ -423,8 +441,26 @@ function App() {
     </section>
 
   )
-  
+  */
 
+  
+  const [unreadMessages, setUnreadMessages] = useState([])
+
+  return (
+    <div>
+      {/* {unreadMessages.length > 1 && <h1>  You have {unreadMessages.length} Unread Messages</h1>}
+      {unreadMessages.length === 0 && <p>You're all caught up!</p>}
+      {unreadMessages.length === 1 && <p>You have 1 Unread Message </p>} */}
+
+      {
+        unreadMessages.length === 0 ? <p>You're all caught up!</p> : 
+        unreadMessages.length === 1 ? <p>You have 1 Unread Message </p> : 
+        unreadMessages.length > 1 ? <h1>  You have {unreadMessages.length} Unread Messages</h1> : null
+      }
+
+    </div>
+  )
+  
 
   // return(
   //   <div className='rs-bg'>
