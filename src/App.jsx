@@ -302,7 +302,6 @@ function App() {
     </main>
   )
   */
-
   /*
   const [contact, setContact] = useState({
     firstName: "John",
@@ -356,7 +355,6 @@ function App() {
     </main>
   )
   */
-
   /*
   function signUp(formData){
     // const email = formData.get('email');
@@ -442,15 +440,14 @@ function App() {
 
   )
   */
-
-  
+  /*
   const [unreadMessages, setUnreadMessages] = useState([])
 
   return (
     <div>
-      {/* {unreadMessages.length > 1 && <h1>  You have {unreadMessages.length} Unread Messages</h1>}
-      {unreadMessages.length === 0 && <p>You're all caught up!</p>}
-      {unreadMessages.length === 1 && <p>You have 1 Unread Message </p>} */}
+      {//unreadMessages.length > 1 && <h1>  You have {unreadMessages.length} Unread Messages</h1>}
+      {//unreadMessages.length === 0 && <p>You're all caught up!</p>}
+      {//unreadMessages.length === 1 && <p>You have 1 Unread Message </p>} 
 
       {
         unreadMessages.length === 0 ? <p>You're all caught up!</p> : 
@@ -460,17 +457,19 @@ function App() {
 
     </div>
   )
-  
+  */
 
-  // return(
-  //   <div className='rs-bg'>
-  //     <Header />
-  //     <Main />  
+
+  
+  return(
+    <div className='rs-bg'>
+      <Header />
+      <Main />  
     
-  //   </div>
+    </div>
       
     
-  // )
+  )
 
   
 }
