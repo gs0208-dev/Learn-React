@@ -17,6 +17,7 @@ import Main from './components/3-React-State/Main';
 import { useState } from 'react';
 import emptyStar from "./assets/React-State/empty-star.png"
 import filledStar from "./assets/React-State/filled-star.png"
+import Count from './components/3-React-State/Count';
 
 /**
  * Challenge: pass props to the Entry component to display
@@ -125,11 +126,26 @@ import filledStar from "./assets/React-State/filled-star.png"
  *   messages" (plural)
 */
 
+/**
+ * Challenge:
+ * - Create a new component called `Count`
+ *    - It should receive a prop called `number`, whose value
+ *      is the current value of our count
+ *    - Have the component render the h2.count element below
+ *      and display the incoming prop `number`
+ * - Replace the h2.count below with an instance of
+ *   the new Count component, passing the correct value
+ *   to its `number` prop.
+ * - After doing this, everything should be working the
+ *   same as before.
+*/
+
     
 
 
 function App() {
 
+  
   /*
   return (
     <>
@@ -459,17 +475,46 @@ function App() {
   )
   */
 
+  const [count, setCount] = useState(0);
+
+  function add(){
+    setCount(prev => prev + 1 )
+  }
+
+  function subtract(){
+    setCount ( prev => prev - 1 )
+  }
+
+  return(
+    <main className="container">
+      <div className="counter">
+        <button
+          className="minus"
+          onClick={subtract}
+          aria-label="Decrease count"
+        >-</button>
+
+        <Count number={count} />
+
+        <button
+          className="plus"
+          onClick={add}
+          aria-label="Increase count"
+        >+</button>
+      </div>
+    </main>
+  )
 
   
-  return(
-    <div className='rs-bg'>
-      <Header />
-      <Main />  
+  // return(
+  //   <div className='rs-bg'>
+  //     <Header />
+  //     <Main />  
     
-    </div>
+  //   </div>
       
     
-  )
+  // )
 
   
 }
