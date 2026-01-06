@@ -18,6 +18,7 @@ import { useState } from 'react';
 import emptyStar from "./assets/React-State/empty-star.png"
 import filledStar from "./assets/React-State/filled-star.png"
 import Count from './components/3-React-State/Count';
+import Star from './components/3-React-State/Star';
 
 /**
  * Challenge: pass props to the Entry component to display
@@ -140,6 +141,17 @@ import Count from './components/3-React-State/Count';
  *   same as before.
 */
 
+/**
+ * Challenge: Move the star image into its own component (Star)
+ * - It should receive a prop called `isFilled` that it
+ *   uses to determine which icon it will display. (You'll
+ *   need to import the 2 star icons into that new component first).
+ * - Import and render that component, passing the value of
+ *   `isFavorite` to the new `isFilled` prop.
+ * - Don't worry about the abiliity to flip this value quite yet.
+ *   Instead, you can test if it's working by manually changing
+ *   `isFavorite` in state above.
+*/
     
 
 
@@ -318,7 +330,8 @@ function App() {
     </main>
   )
   */
-  /*
+  
+  
   const [contact, setContact] = useState({
     firstName: "John",
     lastName: "Doe",
@@ -327,9 +340,7 @@ function App() {
     isFavorite: false
   })
 
-  let starIcon = contact.isFavorite ? filledStar : emptyStar;
-  let ariaLabel = contact.isFavorite ? "Remove from favorites" : 'Add to favorites';
-  let imageAlt = contact.isFavorite ? "Filled star icon" : "empty star icon";
+ 
 
   function toggleFavorite() {
     setContact(prev => {
@@ -349,17 +360,9 @@ function App() {
           alt="User profile picture of John Doe"
         />
         <div className="info">
-          <button 
-            onClick={toggleFavorite}
-            aria-pressed={contact.isFavorite}
-            aria-label= { ariaLabel}
-            className="favorite-button">
-            <img width={30}
-              src={starIcon}
-              alt={imageAlt}
-              className="favorite"
-            />
-          </button>
+
+          <Star isFilled={contact.isFavorite} handleClick={toggleFavorite} />
+
           <h2 className="name">
             {contact.firstName} {contact.lastName}
           </h2>
@@ -370,7 +373,8 @@ function App() {
       </article>
     </main>
   )
-  */
+
+  
   /*
   function signUp(formData){
     // const email = formData.get('email');
@@ -475,6 +479,7 @@ function App() {
   )
   */
 
+  /*
   const [count, setCount] = useState(0);
 
   function add(){
@@ -504,7 +509,7 @@ function App() {
       </div>
     </main>
   )
-
+  */
   
   // return(
   //   <div className='rs-bg'>
