@@ -1,4 +1,5 @@
 import chefimg from "../../assets/React-State/chef-claude.png"
+import { useState } from "react"
 
 
 
@@ -7,7 +8,14 @@ import chefimg from "../../assets/React-State/chef-claude.png"
  * and render it here in the App component
 */
 
-export function Header(){
+/**
+ * Challenge:
+ * Raise state up a level and pass it down to both the
+ * Header and Body components through props.
+*/
+
+export function Header({userName}){
+  /*
   return(
     <header className="rs-header">
         <img className="rs-img" src={chefimg} alt="chefClaude" />
@@ -16,4 +24,15 @@ export function Header(){
         </span>
     </header>
   );
+  */
+
+ 
+
+  return (
+    <header>
+      <img alt="avatr img"/>
+      <p>{userName}</p>
+    </header>
+  )
+
 }

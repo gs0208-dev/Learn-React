@@ -19,6 +19,7 @@ import emptyStar from "./assets/React-State/empty-star.png"
 import filledStar from "./assets/React-State/filled-star.png"
 import Count from './components/3-React-State/Count';
 import Star from './components/3-React-State/Star';
+import Body from './components/3-React-State/Body';
 
 /**
  * Challenge: pass props to the Entry component to display
@@ -331,7 +332,7 @@ function App() {
   )
   */
   
-  
+  /*
   const [contact, setContact] = useState({
     firstName: "John",
     lastName: "Doe",
@@ -373,7 +374,7 @@ function App() {
       </article>
     </main>
   )
-
+  */
   
   /*
   function signUp(formData){
@@ -521,6 +522,14 @@ function App() {
     
   // )
 
+   const [userName, setUserName] = useState("Joe")
+
+  return (
+    <main>
+      <Header userName={userName} />
+      <Body userName={userName}/>
+    </main>
+  )
   
 }
 
