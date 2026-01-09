@@ -20,6 +20,8 @@ import filledStar from "./assets/React-State/filled-star.png"
 import Count from './components/3-React-State/Count';
 import Star from './components/3-React-State/Star';
 import Body from './components/3-React-State/Body';
+import pads from './components/3-React-State/pads';
+import Pad from './components/3-React-State/Pad';
 
 /**
  * Challenge: pass props to the Entry component to display
@@ -153,8 +155,41 @@ import Body from './components/3-React-State/Body';
  *   Instead, you can test if it's working by manually changing
  *   `isFavorite` in state above.
 */
-    
 
+/**
+ * Challenge part 1:
+ * 1. Initialize state with the default value of the
+ *    array pulled in from pads.js
+ * 2. Map over that state array and display each one
+ *    as a <button> (CSS is already written for you)
+ *    (Don't worry about using the "on" or "color" 
+ *    properties yet)
+*/
+
+/**
+ * Challenge: use a ternary to determine the backgroundColor
+ * of the buttons
+ * If darkMode is true, set them to "#222222"
+ * If darkMode is false, set them to "#cccccc"
+*/
+
+/**
+ * Challenge part 2:
+ * 1. Create a separate component called "Pad" and
+ *    replace the `button` above with our <Pad /> component
+ * 2. Pass the Pad component a prop called `color` with the
+ *    value of the same name from the `padsData` objects
+ * 3. In the Pad component, apply an inline style to the <button>
+ *    to set the backgroundColor of the button.
+ * 
+ * (We'll deal with the "on" property soon)
+*/
+
+/**
+ * Challenge part 3:
+ * Our buttons got turned off by default! Update the code
+ * so if the button is "on", it has the className of "on".
+*/
 
 function App() {
 
@@ -511,7 +546,34 @@ function App() {
     </main>
   )
   */
+  /*
+  const [userName, setUserName] = useState("Joe")
+
+  return (
+    <main>
+      <Header userName={userName} />
+      <Body userName={userName}/>
+    </main>
+  )
+  */ 
   
+  const [state, setState] = useState(pads);
+
+  const display = state.map((value) => {
+    return(
+      <Pad key={value.id} color={value.color}  on={value.on}/>
+    )
+  })
+
+
+  return (
+    <main className='pad'>
+      <div className="pad-container">
+        {display}
+      </div>
+    </main>
+  )
+
   // return(
   //   <div className='rs-bg'>
   //     <Header />
@@ -522,14 +584,7 @@ function App() {
     
   // )
 
-   const [userName, setUserName] = useState("Joe")
 
-  return (
-    <main>
-      <Header userName={userName} />
-      <Body userName={userName}/>
-    </main>
-  )
   
 }
 
