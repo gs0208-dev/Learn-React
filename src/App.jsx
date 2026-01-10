@@ -191,6 +191,25 @@ import Pad from './components/3-React-State/Pad';
  * so if the button is "on", it has the className of "on".
 */
 
+/**
+ * Challenge: Create a toggle() function that logs
+ * "clicked!" to the console
+ * 
+ * Pass that function down to each of the Pad components
+ * and set it up so when they get clicked, the function runs
+*/
+
+/**
+ * Challenge:
+ * Call setPads to update the state of the one pad that was
+ * clicked. Map over the previous pads array, and if the current
+ * item you're iterating over has the same id as the `id` passed
+ * to this function, then return a new object with the `on` value
+ * set to the opposite of what it was before.
+ * Otherwise (if the ids don't match), just return the previous
+ * item as it was, unchanged.
+*/
+
 function App() {
 
   
@@ -557,14 +576,22 @@ function App() {
   )
   */ 
   
+  /*
   const [state, setState] = useState(pads);
+
+  function toggle(id){
+    setState(prev => prev.map(items => {
+      return items.id === id ? {...items, on:!items.on} : items
+    }) )
+  }
 
   const display = state.map((value) => {
     return(
-      <Pad key={value.id} color={value.color}  on={value.on}/>
+      <Pad key={value.id} color={value.color} id={value.id}  on={value.on} toggle={toggle}/>
     )
   })
 
+  
 
   return (
     <main className='pad'>
@@ -573,16 +600,17 @@ function App() {
       </div>
     </main>
   )
+  */
 
-  // return(
-  //   <div className='rs-bg'>
-  //     <Header />
-  //     <Main />  
+  return(
+    <div className='rs-bg'>
+      <Header />
+      <Main />  
     
-  //   </div>
+    </div>
       
     
-  // )
+  )
 
 
   

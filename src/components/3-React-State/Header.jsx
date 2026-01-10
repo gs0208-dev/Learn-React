@@ -15,7 +15,7 @@ import { useState } from "react"
 */
 
 export function Header({userName}){
-  /*
+
   return(
     <header className="rs-header">
         <img className="rs-img" src={chefimg} alt="chefClaude" />
@@ -24,15 +24,15 @@ export function Header({userName}){
         </span>
     </header>
   );
-  */
+  
 
  
-
+  /*
   return (
     <header>
       <img alt="avatr img"/>
       <p>{userName}</p>
     </header>
   )
-
+  */
 }
