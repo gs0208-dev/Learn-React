@@ -1,4 +1,4 @@
-import Groq, {groq} from 'groq-sdk';
+import Groq from 'groq-sdk';
 
 
 const SYSTEM_PROMPT = `
@@ -6,20 +6,21 @@ You are an assistant that receives a list of ingredients that a user has and sug
 `;
 
 const groq = new Groq({
-  apiKey: import.meta.env.VITE_GROQ_API_KEY,
-  dangerouslyAllowBrowser: true,
-})
+    apiKey: import.meta.env.VITE_GROQ_API_KEY, // Changed to Vite format for your local setup
+    dangerouslyAllowBrowser: true,
+});
 
 export async function getRecipeFromGroq(ingredientsArr) {
-    const ingredientsString = ingredientsArr.join(", ")
+    const ingredientsString = ingredientsArr.join(", ");
 
-    const msg = await anthropic.messages.create({
-        model: "llama-3.3-70b-versatile",
+    const msg = await groq.chat.completions.create({
+        model: "llama-3.3-70b-versatile", // Use a Groq supported model
         max_tokens: 1024,
-        system: SYSTEM_PROMPT,
         messages: [
+            { role: "system", content: SYSTEM_PROMPT }, // Groq puts system prompt here
             { role: "user", content: `I have ${ingredientsString}. Please give me a recipe you'd recommend I make!` },
         ],
     });
-    return msg.content[0].text
+
+    return msg.choices[0].message.content; // The path to the text is different
 }

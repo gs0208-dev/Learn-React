@@ -1,4 +1,7 @@
-export default function IngredientsList({ingredients, showRecipe}){
+import { useState } from "react"
+
+
+export default function IngredientsList({ingredients, response}){
 
   const ingredientsListItems = ingredients.map((list) => {
     return (
@@ -7,6 +10,8 @@ export default function IngredientsList({ingredients, showRecipe}){
       </li>
     )
   })
+
+
 
   return (
     <section>
@@ -18,7 +23,7 @@ export default function IngredientsList({ingredients, showRecipe}){
           <h3>Ready for a recipe?</h3> 
           <p>Generate a recipe from your list of ingredients.</p>
         </div>
-        <button onClick={showRecipe}>Get a recipe</button>
+        <button onClick={response} >Get a recipe</button>
       </div>}
     </section>
   )

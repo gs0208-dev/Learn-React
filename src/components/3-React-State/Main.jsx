@@ -1,6 +1,7 @@
-import { useState } from "react"
+import { use, useState } from "react"
 import ClaudeRecipe from "./ClaudeRecipe";
 import IngredientsList from "./IngredientsList";
+import { getRecipeFromGroq } from "./api"
 
 /**
  * Review Challenge:
@@ -84,10 +85,33 @@ import IngredientsList from "./IngredientsList";
  * beyond what I've listed above.
 */
 
+/**
+ * Challenge: Get a recipe from the AI!
+ * 
+ * This will be a bit harder of a challenge that will require you
+ * to think critically and synthesize the skills you've been
+ * learning and practicing up to this point.
+ * 
+ * Using either the `getRecipeFromChefClaude` function or the  
+ * `getRecipeFromMistral` function, make it so that when the user
+ * clicks "Get a recipe", the text response from the AI is displayed
+ * in the <ClaudeRecipe> component.
+ * 
+ * For now, just have it render the raw markdown that the AI returns,
+ * don't worry about making it look nice yet. (We're going to use a
+ * package that will render the markdown for us soon.)
+*/
+
 export default function Main(){
 
-  const [ ingredients, setIngredient] = useState(["all the main spices", "pasta", "ground beef", "tomato paste"])
-  const [recipeShown, setRecipeShown] = useState(false);
+  const [ ingredients, setIngredient] = useState([])
+
+  const [showRecipe, setShowRecipe] = useState("");
+
+  async function responseFromAI() {
+    const response = await getRecipeFromGroq(ingredients);
+    setShowRecipe(response)
+  }
 
 
 
@@ -95,12 +119,7 @@ export default function Main(){
     const newIngredient = formData.get("ingredient");
     setIngredient(prev => [...prev, newIngredient])
   }
-
-  function showRecipe(){
-    setRecipeShown(prev => !prev)
-  }
   
-
   return (
     <main className="rs-main">
       <form className="rs-form" action={formAction}>
@@ -108,10 +127,10 @@ export default function Main(){
         <button>+ Add ingredient</button>
       </form>
       { ingredients.length >= 1 && 
-        <IngredientsList ingredients={ingredients} showRecipe={showRecipe} />
+        <IngredientsList ingredients={ingredients} response={responseFromAI} />
       }
-      { recipeShown &&
-        <ClaudeRecipe />  
+      { 
+        showRecipe && <ClaudeRecipe recipe={showRecipe} />
       }
     </main>
   )
