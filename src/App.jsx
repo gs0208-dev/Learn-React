@@ -12,8 +12,8 @@ import catimg2 from './assets/DDR-images/cat-img2.jpg'
 import catimg3 from './assets/DDR-images/cat-img3.jpg'
 import catimg4 from './assets/DDR-images/cat-img4.jpg'
 import jokesData from './components/2-Data-Driven-React/jokesData'
-import { Header } from "./components/3-React-State/Header"
-import Main from './components/3-React-State/Main';
+// import { Header } from "./components/3-React-State/Header"
+// import Main from './components/3-React-State/Main';
 import { useState } from 'react';
 import emptyStar from "./assets/React-State/empty-star.png"
 import filledStar from "./assets/React-State/filled-star.png"
@@ -22,6 +22,8 @@ import Star from './components/3-React-State/Star';
 import Body from './components/3-React-State/Body';
 import pads from './components/3-React-State/pads';
 import Pad from './components/3-React-State/Pad';
+import Header from './components/4-Side-Effects/Header';
+import Main from './components/4-Side-Effects/Main';
 
 /**
  * Challenge: pass props to the Entry component to display
@@ -212,6 +214,13 @@ import Pad from './components/3-React-State/Pad';
 
 function App() {
 
+  return (
+    <>
+      <Header />
+      <Main />
+    </>
+  )
+
   
   /*
   return (
@@ -224,7 +233,6 @@ function App() {
     </>
   )
   */
-
   /*
   return (
     <div className='contacts'>
@@ -385,7 +393,6 @@ function App() {
     </main>
   )
   */
-  
   /*
   const [contact, setContact] = useState({
     firstName: "John",
@@ -429,7 +436,6 @@ function App() {
     </main>
   )
   */
-  
   /*
   function signUp(formData){
     // const email = formData.get('email');
@@ -533,7 +539,6 @@ function App() {
     </div>
   )
   */
-
   /*
   const [count, setCount] = useState(0);
 
@@ -574,8 +579,7 @@ function App() {
       <Body userName={userName}/>
     </main>
   )
-  */ 
-  
+  */  
   /*
   const [state, setState] = useState(pads);
 
@@ -601,19 +605,14 @@ function App() {
     </main>
   )
   */
-
+  /*
   return(
     <div className='rs-bg'>
       <Header />
       <Main />  
-    
-    </div>
-      
-    
+    </div> 
   )
-
-
-  
+  */
 }
 
 export default App
