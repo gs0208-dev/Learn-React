@@ -14,7 +14,7 @@ import catimg4 from './assets/DDR-images/cat-img4.jpg'
 import jokesData from './components/2-Data-Driven-React/jokesData'
 // import { Header } from "./components/3-React-State/Header"
 // import Main from './components/3-React-State/Main';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import emptyStar from "./assets/React-State/empty-star.png"
 import filledStar from "./assets/React-State/filled-star.png"
 import Count from './components/3-React-State/Count';
@@ -212,16 +212,59 @@ import Main from './components/4-Side-Effects/Main';
  * item as it was, unchanged.
 */
 
+/**
+ * Challenge:
+ * Instead of console logging the data, save it in state
+ * and display it to the page. (Just replace the hard-coded
+ * object inside the `<pre>` element with the data)
+*/
+
+/**
+ * Challenge: re-write the useEffect
+ * It should run any time `count` changes
+ * For now, just console.log("Effect function ran")
+*/
+
 function App() {
 
-  return (
-    <>
-      <Header />
-      <Main />
-    </>
-  )
+  // return (
+  //   <>
+  //     <Header />
+  //     <Main />
+  //   </>
+  // )
 
+  const [starWarsData, setStarWarsData] = useState();
   
+  fetch("https://swapi.info/api/people/1")
+  .then((res) => res.json())
+  .then(data => setStarWarsData(data));
+
+  return (
+    <div>
+      <pre>{JSON.stringify(starWarsData,null,2)}</pre>
+    </div>
+  )
+  
+  /*
+  const [count, setCount] = useState(0)
+  console.log("Rendered");
+
+  useEffect(() => {
+    console.log("Effect Function Ran");
+    
+  }, [count])
+
+  return (
+    <div>
+      <h2>The count is {count}</h2>
+      <button onClick={() => setCount(prevCount => prevCount + 1)}>Add</button>
+      <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+      </div>
+  )
+  */
+
+
   /*
   return (
     <>
