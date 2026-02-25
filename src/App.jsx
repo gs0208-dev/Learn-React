@@ -225,27 +225,68 @@ import Main from './components/4-Side-Effects/Main';
  * For now, just console.log("Effect function ran")
 */
 
+/**
+ * Challenge part 1:
+ * Fetch the data from this url: "https://swapi.dev/api/people/1"
+ * and save it in the starWarsData state. Make sure you don't
+ * get stuck in an infinite rendering loop!
+*/
+
+/**
+ * Challenge part 2:
+ * Combine the "count" state with the request URL
+ * so that pressing the "Get next character" button
+ * will get a new character from the Star Wars API.
+ * Remember to consider the dependencies array!
+*/
+
+
 function App() {
 
-  // return (
-  //   <>
-  //     <Header />
-  //     <Main />
-  //   </>
-  // )
+  return (
+    <>
+      <Header />
+      <Main />
+    </>
+  )
 
-  const [starWarsData, setStarWarsData] = useState();
-  
-  fetch("https://swapi.info/api/people/1")
-  .then((res) => res.json())
-  .then(data => setStarWarsData(data));
+  /*
+  const [starWarsData, setStarWarsData] = useState({})
+  const [count, setCount] = useState(1)
+  console.log("Rendered");
+
+
+  useEffect(() => {
+    console.log("Re-rendered");
+
+    fetch(`https://swapi.info/api/people/${count}`)
+      .then((res) => res.json())
+      .then((json) => setStarWarsData(json))
+  }, [count])
 
   return (
     <div>
-      <pre>{JSON.stringify(starWarsData,null,2)}</pre>
+      <h2>The count is {count}</h2>
+      <button onClick={() => setCount(prevCount => prevCount + 1)}>Add</button>
+      <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
     </div>
   )
-  
+  */
+
+  /*
+  const [starWarsData, setStarWarsData] = useState();
+
+  fetch("https://swapi.info/api/people/1")
+    .then((res) => res.json())
+    .then(data => setStarWarsData(data));
+
+  return (
+    <div>
+      <pre>{JSON.stringify(starWarsData, null, 2)}</pre>
+    </div>
+  )
+  */
+
   /*
   const [count, setCount] = useState(0)
   console.log("Rendered");
@@ -305,7 +346,7 @@ function App() {
     />
     </div>
   )
-  */  
+  */
   /*
   const ninjaTurtles = [ <h2>Donatello</h2> , <h2>Michaelangelo</h2> , <h2>Rafael</h2>, <h2> Leonardo</h2>]
   return (
@@ -622,7 +663,7 @@ function App() {
       <Body userName={userName}/>
     </main>
   )
-  */  
+  */
   /*
   const [state, setState] = useState(pads);
 
