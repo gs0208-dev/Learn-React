@@ -1,4 +1,4 @@
-import { use, useState } from "react"
+import { use, useEffect, useRef, useState } from "react"
 import ClaudeRecipe from "./ClaudeRecipe";
 import IngredientsList from "./IngredientsList";
 import { getRecipeFromGroq } from "./api"
@@ -102,11 +102,36 @@ import { getRecipeFromGroq } from "./api"
  * package that will render the markdown for us soon.)
 */
 
+/**
+ * Problem:
+ * We want to scroll the "Ready for a recipe?" div into view
+ * ONLY AFTER the ClaudeRecipe section is rendered to the page 
+ * (i.e. when `recipe` is not an empty string). How can we do that?
+*/
+
+/**
+ * Challenge:
+ * Add a new effect that calls `recipeSection.current.scrollIntoView()`
+ * only if recipe is not an empty string and recipeSection.current is not null.
+ * Think carefully about what value(s) you would want to include in
+ * the dependencies array.
+*/
+
 export default function Main(){
 
   const [ ingredients, setIngredient] = useState([])
 
   const [showRecipe, setShowRecipe] = useState("");
+
+  const recipeSection = useRef(null);
+  console.log(recipeSection);
+
+  useEffect(()=> {
+    if(showRecipe && recipeSection.current){
+      recipeSection.current.scrollIntoView()
+    }
+  },[showRecipe]);
+  
 
   async function responseFromAI() {
     const response = await getRecipeFromGroq(ingredients);
@@ -127,7 +152,7 @@ export default function Main(){
         <button>+ Add ingredient</button>
       </form>
       { ingredients.length >= 1 && 
-        <IngredientsList ingredients={ingredients} response={responseFromAI} />
+        <IngredientsList ref={recipeSection} ingredients={ingredients} response={responseFromAI} />
       }
       { 
         showRecipe && <ClaudeRecipe recipe={showRecipe} />

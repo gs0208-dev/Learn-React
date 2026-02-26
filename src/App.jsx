@@ -12,8 +12,8 @@ import catimg2 from './assets/DDR-images/cat-img2.jpg'
 import catimg3 from './assets/DDR-images/cat-img3.jpg'
 import catimg4 from './assets/DDR-images/cat-img4.jpg'
 import jokesData from './components/2-Data-Driven-React/jokesData'
-// import { Header } from "./components/3-React-State/Header"
-// import Main from './components/3-React-State/Main';
+import { Header } from "./components/3-React-State/Header"
+import Main from './components/3-React-State/Main';
 import { useEffect, useState } from 'react';
 import emptyStar from "./assets/React-State/empty-star.png"
 import filledStar from "./assets/React-State/filled-star.png"
@@ -22,8 +22,8 @@ import Star from './components/3-React-State/Star';
 import Body from './components/3-React-State/Body';
 import pads from './components/3-React-State/pads';
 import Pad from './components/3-React-State/Pad';
-import Header from './components/4-Side-Effects/Header';
-import Main from './components/4-Side-Effects/Main';
+// import Header from './components/4-Side-Effects/Header';
+// import Main from './components/4-Side-Effects/Main';
 
 /**
  * Challenge: pass props to the Entry component to display
@@ -242,13 +242,14 @@ import Main from './components/4-Side-Effects/Main';
 
 
 function App() {
-
+  /*
   return (
     <>
       <Header />
       <Main />
     </>
   )
+  */
 
   /*
   const [starWarsData, setStarWarsData] = useState({})
@@ -689,14 +690,14 @@ function App() {
     </main>
   )
   */
-  /*
+  
   return(
     <div className='rs-bg'>
       <Header />
       <Main />  
     </div> 
   )
-  */
+  
 }
 
 export default App

@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 
-export default function IngredientsList({ingredients, response}){
+export default function IngredientsList({ingredients, response, ref}){
 
   const ingredientsListItems = ingredients.map((list) => {
     return (
@@ -19,7 +19,7 @@ export default function IngredientsList({ingredients, response}){
       <ul className="ingredients-list" aria-live="polite">{ingredientsListItems}</ul>
       { ingredients.length > 3 &&
       <div className="get-recipe-container">
-        <div>
+        <div ref={ref}>
           <h3>Ready for a recipe?</h3> 
           <p>Generate a recipe from your list of ingredients.</p>
         </div>

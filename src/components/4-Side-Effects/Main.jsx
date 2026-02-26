@@ -64,13 +64,8 @@ export default function Main() {
     
   }
 
-  function randomImageSelection(){
-    const random = Math.floor(Math.random()*40);
-
-  }
-
   function handleClick(){
-    const random = Math.floor(Math.random()*40);
+    const random = Math.floor(Math.random()*allMemes.length);
     setInfo(prev => ({
       ...prev,
       imageURL: allMemes[random].url

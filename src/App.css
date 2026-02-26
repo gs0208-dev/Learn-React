@@ -267,7 +267,7 @@
 
 /* Section-3 */
 
-/*
+
 body {
   margin: 0;
   font-family: Inter, sans-serif;
@@ -380,7 +380,7 @@ ul.ingredients-list > li {
   font-family: Inter, sans-serif;
   font-size: 0.875rem;
   cursor: pointer;
-} */
+} 
 
 /*
 body {
@@ -414,6 +414,10 @@ button.on {
 }
 */
 
+
+/* SECTION - 4 */
+
+/*
 * {
     box-sizing: border-box;
 }
@@ -519,4 +523,5 @@ main {
 
 .top {
     top: 0;
-}
+}   
+*/
